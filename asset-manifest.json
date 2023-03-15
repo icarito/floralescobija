@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/floralescobija//.com/static/css/main.6bc788c6.css",
-    "main.js": "/floralescobija//.com/static/js/main.bf41769b.js",
-    "static/js/787.647ebef5.chunk.js": "/floralescobija//.com/static/js/787.647ebef5.chunk.js",
-    "static/media/fondo.jpg": "/floralescobija//.com/static/media/fondo.8bd267e53fba528aeb6b.jpg",
-    "index.html": "/floralescobija//.com/index.html",
-    "main.6bc788c6.css.map": "/floralescobija//.com/static/css/main.6bc788c6.css.map",
-    "main.bf41769b.js.map": "/floralescobija//.com/static/js/main.bf41769b.js.map",
-    "787.647ebef5.chunk.js.map": "/floralescobija//.com/static/js/787.647ebef5.chunk.js.map"
+    "main.css": "/static/css/main.6bc788c6.css",
+    "main.js": "/static/js/main.3bdee5c1.js",
+    "static/js/787.647ebef5.chunk.js": "/static/js/787.647ebef5.chunk.js",
+    "static/media/fondo.jpg": "/static/media/fondo.8bd267e53fba528aeb6b.jpg",
+    "index.html": "/index.html",
+    "main.6bc788c6.css.map": "/static/css/main.6bc788c6.css.map",
+    "main.3bdee5c1.js.map": "/static/js/main.3bdee5c1.js.map",
+    "787.647ebef5.chunk.js.map": "/static/js/787.647ebef5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6bc788c6.css",
-    "static/js/main.bf41769b.js"
+    "static/js/main.3bdee5c1.js"
   ]
 }
