@@ -1,0 +1,20 @@
+[
+    {
+        "id": 0,
+        "name": "Conito",
+        "price": 20,
+        "photo": "conos.jpg"
+    },
+    {
+        "id": 1,
+        "name": "Ramo Pequeño",
+        "price": 60,
+        "photo": "bouquet60.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Ramo Mediano",
+        "price": 100,
+        "photo": "bouquet100.jpg"
+    }
+]

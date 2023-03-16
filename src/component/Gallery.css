@@ -1,0 +1,25 @@
+.Gallery-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  overflow-y: scroll;
+  padding-bottom: 10px;
+}
+
+.Gallery-card {
+  background-color: #dddc;
+  border-radius: 10px;
+  padding: 1em 5%;
+  margin: 10px 15px 0px;
+}
+
+.Gallery-card > img {
+  max-height: 250px;
+  border: 1px solid black;
+}
+
+.Gallery-card-body {
+  font-size: calc(12px + 2vmin);
+  display: flex;
+  justify-content: space-between;
+}
