@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import LocationInput from '../components/locationInput';
+import './form.css';
 
 function FloreriaForm() {
 
@@ -28,7 +30,8 @@ function FloreriaForm() {
           onChange={event => setParaQuien(event.target.value)}
         />
         <br />
-        <label htmlFor="ubicacion">Ubicación vía whats:</label>
+        <label htmlFor="ubicacion">Ubicación:</label>
+        <LocationInput />
         <input
           type="text"
           id="ubicacion"

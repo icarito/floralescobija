@@ -1,4 +1,5 @@
 import logo from '../fondo.jpg';
+import './home.css';
 
 export default function Home() {
     return (
