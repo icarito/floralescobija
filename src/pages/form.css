@@ -1,1 +1,42 @@
 @import '~leaflet/dist/leaflet.css';
+
+/* Estilos generales del formulario */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 5%;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 80%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+button[type="submit"] {
+  display: block;
+  margin: 0 auto;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #d620b0;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #c90ca6;
+}
