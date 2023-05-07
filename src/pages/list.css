@@ -1,0 +1,54 @@
+.pedido {
+    border: 2px solid #d620b0;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    background-color: #f4f4f4;
+  }
+  
+  .paraQuien {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .ubicacion {
+    font-size: 18px;
+    font-style: italic;
+    color: #666;
+    margin: 0;
+  }
+  
+  .referencia {
+    font-size: 18px;
+    color: #666;
+    margin: 0;
+  }
+  
+  .mensaje {
+    font-size: 18px;
+    color: #666;
+    margin: 0;
+  }
+  
+  .celular {
+    font-size: 18px;
+    color: #666;
+    margin: 0;
+  }
+  
+  .antiguedad {
+    font-size: 16px;
+    font-style: italic;
+    color: #aaa;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+  
+  .estado {
+    font-size: 20px;
+    font-weight: bold;
+    color: #d620b0;
+    margin: 0;
+  }
+  

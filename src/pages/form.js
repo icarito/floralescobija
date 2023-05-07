@@ -1,19 +1,36 @@
+// import { db } from '../lib/firebase.js';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import LocationInput from '../components/locationInput';
+import { enviarPedido } from '../lib/firebase.js';
 import './form.css';
 
 function FloreriaForm() {
-
-  const [ paraQuien, setParaQuien ] = useState('');
-  const [ ubicacion, setUbicacion ] = useState('');
-  const [ referencia, setReferencia ] = useState('');
-  const [ mensaje, setMensaje ] = useState('');
-  const [ celular, setCelular ] = useState('');
+  const navigate = useNavigate();
+  const [paraQuien, setParaQuien] = useState('');
+  const [ubicacion, setUbicacion] = useState('');
+  const [referencia, setReferencia] = useState('');
+  const [mensaje, setMensaje] = useState('');
+  const [celular, setCelular] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Aquí podrías realizar alguna operación con los datos del formulario
-    // Por ejemplo, enviar un correo electrónico o guardar los datos en una base de datos
+
+    // Crea un nuevo documento en la colección "pedidos"
+    enviarPedido({
+      paraQuien,
+      ubicacion,
+      referencia,
+      mensaje,
+      celular,
+    })
+      .then(() => {
+        console.log('Pedido enviado');
+        navigate("/lista")
+      })
+      .catch((error) => {
+        console.error('Error al enviar el pedido:', error);
+      });
   };
 
   return (
