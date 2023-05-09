@@ -18,15 +18,15 @@ const FloreriaList = () => {
     return (
         <ul>
             {pedidos.map(pedido => (
-                <div class="pedido" key={pedido.id}>
-                    <h2 class="paraQuien">{pedido.paraQuien}</h2>
-                    <p class="ubicacion">{pedido.ubicacion}</p>
-                    <p class="referencia">{pedido.referencia}</p>
-                    <p class="mensaje">{pedido.mensaje}</p>
-                    <p class="celular">{pedido.celular}</p>
-                    <p class="antiguedad">{pedido.created_at.toDate().toLocaleDateString()}</p>
-                    <p class="antiguedad">{pedido.created_at.toDate().toLocaleTimeString()}</p>
-                    <p class="estado">{pedido.estado}</p>
+                <div className="pedido" key={pedido.id}>
+                    <h2 className="paraQuien">{pedido.paraQuien}</h2>
+                    <p className="ubicacion">{pedido.ubicacion}</p>
+                    <p className="referencia">{pedido.referencia}</p>
+                    <p className="mensaje">{pedido.mensaje}</p>
+                    <p className="celular">{pedido.celular}</p>
+                    <p className="antiguedad">{pedido.created_at.toDate().toLocaleDateString()}</p>
+                    <p className="antiguedad">{pedido.created_at.toDate().toLocaleTimeString()}</p>
+                    <p className="estado">{pedido.estado}</p>
                 </div>
             ))}
         </ul>
