@@ -33,10 +33,4 @@ const FloreriaList = () => {
     );
 };
 
-//        <li key={pedido.id}>
-//          <h3>{pedido.paraQuien}</h3>
-//          <p>{pedido.ubicacion}</p>
-//          {/* Y así con el resto de la información del pedido */}
-//        </li>
-
 export default FloreriaList;
