@@ -6,7 +6,8 @@ import { MapContainer as Map, TileLayer, Marker, Popup } from "react-leaflet";
 const LocationInput = () => {
   const [position, setPosition] = useState(null);
 
-  const handleLocation = () => {
+  const handleLocation = (e) => {
+    e.preventDefault();
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const { latitude, longitude } = position.coords;
