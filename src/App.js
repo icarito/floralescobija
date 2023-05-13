@@ -3,6 +3,7 @@ import './App.css';
 import Home from './pages/home.js';
 import FloreriaForm from './pages/form.js';
 import FloreriaList from './pages/list.js';
+import FloreriaGallery from './pages/gallery';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faListCheck, faShoppingCart, faSeedling } from '@fortawesome/free-solid-svg-icons';
@@ -32,6 +33,8 @@ function App() {
         </nav>
         <Routes>
           <Route path="/" exact element={<Home />}>
+          </Route>
+          <Route path="/gallery" exact element={<FloreriaGallery />}>
           </Route>
           <Route path="/formulario" element={<FloreriaForm />}>
           </Route>

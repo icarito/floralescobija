@@ -1,0 +1,14 @@
+img.imagen {
+  width: 30vw;
+  height: 30vw;
+  object-fit: scale-down;
+  object-position: center;
+  border-radius: 10px;
+}
+
+.Gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 1rem;
+  margin: 1rem;
+}

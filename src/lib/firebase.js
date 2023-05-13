@@ -28,8 +28,14 @@ export function enviarPedido(campos) {
   });
 }
 
-export function conectaPedidos(callback) {
-  const q = query(collection(db, "pedidos"), where("estado", "==", "pendiente"));
+export function conectaPedidos(callback, estado = "pendiente") {
+  const q = query(collection(db, "pedidos"), where("estado", "==", estado));
+
+  return onSnapshot(q, callback)
+}
+
+export function getProductos(callback) {
+  const q = query(collection(db, "productos"));
 
   return onSnapshot(q, callback)
 }

@@ -1,10 +1,14 @@
 import logo from '../fondo.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
     <header className="App-header">
+      <Link to="/gallery">
+        <button><h1>Hacer un Pedido</h1></button>
+      </Link>
       <img src={logo} className="App-logo" alt="logo" />
       <div>
         <a className="App-link" href="https://www.instagram.com/florales_cobija/">
