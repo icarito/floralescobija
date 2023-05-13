@@ -11,6 +11,8 @@ export default function FloreriaGallery() {
             const nuevosProductos = cambios.map(cambio => ({ id: cambio.doc.id, ...cambio.doc.data() }));
             setProductos(nuevosProductos);
         });
+
+        return unsubscribe
     })
 
     return (
