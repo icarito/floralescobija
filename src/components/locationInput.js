@@ -2,9 +2,16 @@ import React, { useState } from 'react';
 import markerIconPng from "leaflet/dist/images/marker-icon.png";
 import { Icon } from "leaflet";
 import { MapContainer as Map, TileLayer, Marker, Popup } from "react-leaflet";
+import { reverse } from 'nominatim-geocode';
 
-const LocationInput = () => {
+const LocationInput = ({setReferencia}) => {
+  
   const [position, setPosition] = useState(null);
+
+  function handleReverseGeoCode(err, result){
+    console.log(result.display_name)
+    setReferencia(result.display_name)
+  }
 
   const handleLocation = (e) => {
     e.preventDefault();
@@ -12,6 +19,7 @@ const LocationInput = () => {
       (position) => {
         const { latitude, longitude } = position.coords;
         setPosition([latitude, longitude]);
+        reverse({lat:latitude, lon: longitude}, handleReverseGeoCode);
       },
       (error) => {
         console.log(error.message);

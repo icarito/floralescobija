@@ -48,7 +48,7 @@ function FloreriaForm() {
         />
         <br />
         <label htmlFor="ubicacion">Ubicación:</label>
-        <LocationInput />
+        <LocationInput setReferencia={setReferencia} />
         <input
           type="text"
           id="ubicacion"
@@ -57,7 +57,7 @@ function FloreriaForm() {
           onChange={event => setUbicacion(event.target.value)}
         />
         <br />
-        <label htmlFor="referencia">Punto de referencia:</label>
+        <label htmlFor="referencia">Ubicación escrita:</label>
         <input
           type="text"
           id="referencia"
