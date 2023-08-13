@@ -1,3 +1,4 @@
+
 .Gallery-container {
   display: flex;
   flex-direction: column;
@@ -13,9 +14,8 @@
   margin: 10px 15px 0px;
 }
 
-.Gallery-card > img {
+.Gallery-img::part(image) {
   max-height: 250px;
-  border: 1px solid black;
 }
 
 .Gallery-card-body {
