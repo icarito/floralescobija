@@ -32,7 +32,7 @@ function App() {
           </ul>
         </nav>
         <Routes>
-          <Route path="/" exact element={<Home />}>
+          <Route path="/" exact element={<FloreriaGallery />}>
           </Route>
           <Route path="/gallery" exact element={<FloreriaGallery />}>
           </Route>
