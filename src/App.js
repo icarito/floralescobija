@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Home from './pages/home.js';
+// import Home from './pages/home.js';
 import FloreriaForm from './pages/form.js';
 import FloreriaList from './pages/list.js';
 import FloreriaGallery from './pages/gallery';
