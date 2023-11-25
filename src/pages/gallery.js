@@ -15,16 +15,19 @@ export default function FloreriaGallery() {
         return unsubscribe
     })
 
+    function addToCart(product) {
+        console.log(product)
+    }
+
     return (
         <div className="Gallery">
         {
             productos.map(producto => (
-                <div style={{backgroundImage: 'url(' + producto.imagen +')'}} className="producto" key={producto.id}>
+                <button onClick={()=>addToCart(producto)} style={{backgroundImage: 'url(' + producto.imagen +')'}} className="producto" key={producto.id}>
                     <img className="imagen" src={producto.imagen} alt={producto.nombre} />
                     <h2 className="nombre">{producto.nombre}</h2>
                     <p className="descripcion">{producto.descripcion}</p>
-                    <p className="precio">{producto.precio}</p>
-                </div>
+                </button>
             ))
         }
         </div>
