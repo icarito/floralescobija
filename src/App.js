@@ -1,21 +1,25 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 // import Home from './pages/home.js';
 import { auth } from './lib/firebase'
+import NavBar from './components/nav.js'
 import FloreriaForm from './pages/form.js';
 import FloreriaList from './pages/list.js';
 import FloreriaGallery from './pages/gallery';
 import PrivateRoute from './components/privateRoute';
 import LoginForm from './pages/login';
 import { useLocalStorage } from './hooks/useLocalStorage';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faListCheck, faShoppingCart, faSeedling } from '@fortawesome/free-solid-svg-icons';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
 
   const [user, setUser] = useLocalStorage("user", null);
+  const [cart, setCart] = useState([]);
   
+  function addToCart(product) {
+    setCart(cart=>[...cart, product])
+  }
+
   useEffect(() => {
     // Verifica si el usuario está autenticado
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
@@ -36,29 +40,11 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">
-                <FontAwesomeIcon icon={faSeedling} />
-              </Link>
-            </li>
-            <li>
-              <Link to="/formulario">
-                <FontAwesomeIcon icon={faShoppingCart} />
-              </Link>
-            </li>
-            <li>
-              <Link to="/lista">
-                <FontAwesomeIcon icon={faListCheck} />
-              </Link>
-            </li>
-          </ul>
-        </nav>
+        <NavBar cart={cart}></NavBar>
         <Routes>
-          <Route path="/" exact element={<FloreriaGallery />}>
+          <Route path="/" exact element={<FloreriaGallery addToCart={addToCart} />}>
           </Route>
-          <Route path="/gallery" exact element={<FloreriaGallery />}>
+          <Route path="/gallery" exact element={<FloreriaGallery addToCart={addToCart} />}>
           </Route>
           <Route path="/formulario" element={<FloreriaForm />}>
           </Route>
