@@ -5,7 +5,7 @@ import LocationInput from '../components/locationInput';
 import { enviarPedido } from '../lib/firebase.js';
 import './form.css';
 
-function FloreriaForm() {
+function FloreriaForm({cart}) {
   const navigate = useNavigate();
   const [paraQuien, setParaQuien] = useState('');
   const [ubicacion, setUbicacion] = useState('');
@@ -23,6 +23,7 @@ function FloreriaForm() {
       referencia,
       mensaje,
       celular,
+      items: cart
     })
       .then(() => {
         console.log('Pedido enviado');

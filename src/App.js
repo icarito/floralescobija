@@ -23,7 +23,6 @@ function App() {
   useEffect(() => {
     // Verifica si el usuario está autenticado
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
-      console.log(authUser)
       if (authUser) {
         setUser(authUser);
       } else {
@@ -46,7 +45,7 @@ function App() {
           </Route>
           <Route path="/gallery" exact element={<FloreriaGallery addToCart={addToCart} />}>
           </Route>
-          <Route path="/formulario" element={<FloreriaForm />}>
+          <Route path="/formulario" element={<FloreriaForm cart={cart} />}>
           </Route>
           <Route path="/lista" element={
             <PrivateRoute><FloreriaList /></PrivateRoute>

@@ -23,6 +23,7 @@ export const auth = getAuth();
 export function enviarPedido(campos) {
   return addDoc(collection(db, 'pedidos'), {
     ...campos,
+    total: campos.items.map(item=>item.precio).reduce((total, item)=>item + total),
     estado: "pendiente",
     created_at: new Date()
   });
