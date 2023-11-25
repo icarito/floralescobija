@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getProductos } from "../lib/firebase";
 import "./gallery.css";
 
-export default function FloreriaGallery() {
+export default function FloreriaGallery({addToCart}) {
     const [productos, setProductos] = useState([]);
 
     useEffect(() => {
@@ -14,10 +14,6 @@ export default function FloreriaGallery() {
 
         return unsubscribe
     })
-
-    function addToCart(product) {
-        console.log(product)
-    }
 
     return (
         <div className="Gallery">
