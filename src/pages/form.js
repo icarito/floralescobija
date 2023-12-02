@@ -5,7 +5,7 @@ import LocationInput from '../components/locationInput';
 import { enviarPedido } from '../lib/firebase.js';
 import './form.css';
 
-function FloreriaForm({cart}) {
+function FloreriaForm({cart, addLocalOrder}) {
   const navigate = useNavigate();
   const [paraQuien, setParaQuien] = useState('');
   const [ubicacion, setUbicacion] = useState('');
@@ -25,9 +25,9 @@ function FloreriaForm({cart}) {
       celular,
       items: cart
     })
-      .then(() => {
-        console.log('Pedido enviado');
-        navigate("/lista")
+      .then((doc) => {
+        addLocalOrder(doc.id)
+        navigate("/orden/" + doc.id)
       })
       .catch((error) => {
         console.error('Error al enviar el pedido:', error);
@@ -91,7 +91,7 @@ function FloreriaForm({cart}) {
         />
       </fieldset>
       <br />
-      <button type="submit">Enviar pedido</button>
+      <button disabled={cart.length == 0} type="submit">Enviar pedido</button>
     </form>
   );
 }
