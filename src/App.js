@@ -10,14 +10,24 @@ import PrivateRoute from './components/privateRoute';
 import LoginForm from './pages/login';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import { useNotification } from './hooks/useNotification.js';
+import Order from './pages/order.js';
+import MyOrders from './pages/myorders.js';
 
 function App() {
 
   const [user, setUser] = useLocalStorage("user", null);
+  const [localOrders, setLocalOrders] = useLocalStorage("orders", []);
   const [cart, setCart] = useState([]);
+  // useNotification();
   
   function addToCart(product) {
     setCart(cart=>[...cart, product])
+  }
+  
+  function addLocalOrder(order) {
+    console.log("addLocalOrder", order)
+    setLocalOrders([...localOrders, order])
   }
 
   useEffect(() => {
@@ -45,7 +55,11 @@ function App() {
           </Route>
           <Route path="/gallery" exact element={<FloreriaGallery addToCart={addToCart} />}>
           </Route>
-          <Route path="/formulario" element={<FloreriaForm cart={cart} />}>
+          <Route path="/formulario" element={<FloreriaForm cart={cart} addLocalOrder={addLocalOrder} />}>
+          </Route>
+          <Route path="/orden/:id" element={<Order cart={cart} />}>
+          </Route>
+          <Route path="/localOrders" element={<MyOrders localOrders={localOrders}/>}>
           </Route>
           <Route path="/lista" element={
             <PrivateRoute><FloreriaList /></PrivateRoute>

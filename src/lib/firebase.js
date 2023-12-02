@@ -1,6 +1,6 @@
 import { getAuth } from 'firebase/auth';
 import { initializeApp } from "firebase/app";
-import { addDoc, collection, getFirestore, query, where, onSnapshot } from "firebase/firestore";
+import { addDoc, collection, getFirestore, query, where, onSnapshot, getDoc, doc } from "firebase/firestore";
 
 // Configura tu proyecto de Firebase
 const firebaseConfig = {
@@ -39,4 +39,8 @@ export function getProductos(callback) {
   const q = query(collection(db, "productos"));
 
   return onSnapshot(q, callback)
+}
+
+export function getOrder(id) {
+  return getDoc(doc(db, "pedidos", id));
 }

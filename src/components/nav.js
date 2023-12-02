@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faListCheck, faShoppingCart, faSeedling } from '@fortawesome/free-solid-svg-icons';
+import { faListCheck, faShoppingCart, faSeedling, faListUl } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 export default function NavBar({cart}) {
@@ -14,6 +14,11 @@ export default function NavBar({cart}) {
         <li>
           <Link to="/formulario">
             {cart.length}<FontAwesomeIcon icon={faShoppingCart} />
+          </Link>
+        </li>
+        <li>
+          <Link to="/localOrders">
+            <FontAwesomeIcon icon={faListUl} />
           </Link>
         </li>
         <li>
